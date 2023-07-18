@@ -1,0 +1,610 @@
+:root {
+  --text: #0c0916;
+  --background: #ede9f6;
+  --primary-button: #d2a08e;
+  --secondary-button: #e3def2;
+  --accent: #8ed2a0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  font-family: Poppins, sans-serif;
+}
+body {
+  height: 10000px;
+}
+html {
+  scroll-behavior: smooth;
+}
+/* navbar start */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3%;
+  background-image: linear-gradient(180deg, #ede9f6 78%, #8ed2a0 100%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  height: 5rem;
+}
+.navbar .navbar-logo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text);
+}
+.navbar .navbar-logo span {
+  color: var(--accent);
+}
+.navbar .navbar-nav a {
+  color: var(--text);
+  display: inline-block;
+  font-size: 1.2rem;
+  margin: 0 0.5rem;
+}
+.navbar .navbar-nav a:hover {
+  color: var(--accent);
+}
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--accent);
+  transform: scaleX(0);
+  transition: 0.4s linear;
+}
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.6);
+}
+.navbar .navbar-extra a {
+  color: var(--accent);
+}
+/* hamburger menu hilang di dekstop */
+#hamburger-menu {
+  display: none;
+}
+/* navbar end */
+/* home page start */
+/* carousel start */
+.container-carousel {
+  display: flex;
+  padding: 0 35px;
+  min-height: 82vh;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--accent);
+}
+.wrapper {
+  display: flex;
+  max-width: 1200px;
+  position: relative;
+}
+.wrapper i {
+  background-color: var(--primary-button);
+  color: black;
+  top: 50%;
+  height: 44px;
+  width: 44px;
+  cursor: pointer;
+  font-size: 1.15rem;
+  position: absolute;
+  text-align: center;
+  line-height: 44px;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+}
+.wrapper i:active {
+  transform: translateY(-50%) scale(0.9);
+}
+.wrapper i:first-child {
+  left: -22px;
+  display: none;
+}
+.wrapper i:last-child {
+  right: -22px;
+}
+/* di hubungkan ke js */
+.wrapper .carousel {
+  font-size: 0px;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+}
+.carousel.dragging {
+  cursor: grab;
+  scroll-behavior: auto;
+}
+.carousel.dragging img {
+  pointer-events: none;
+}
+.carousel img {
+  height: 340px;
+  object-fit: cover;
+  user-select: none;
+  margin-left: 14px;
+  width: calc(100% / 3);
+}
+.carousel img:first-child {
+  margin-left: 0px;
+}
+@media screen and (max-width: 900px) {
+  .carousel img {
+    width: calc(100% / 2);
+  }
+}
+@media screen and (max-width: 550px) {
+  .carousel img {
+    width: 100%;
+  }
+}
+/* carousel end */
+.container-fitur img {
+  background-color: var(--primary-button);
+  width: 5rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.container-fitur {
+  background-color: var(--accent);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  gap: 8rem;
+  cursor: pointer;
+  color: var(--primary-button);
+}
+.home-Pemantauan-sampah a {
+  text-decoration: none;
+}
+/* home page end */
+/* Pengolahan sampah dekstop start */
+.container-pemantauan-sampah {
+  background-color: var(--accent);
+  height: 50rem;
+  text-align: center;
+}
+.hero-pemantauan-dekstop-logo img {
+  padding-top: 5rem;
+  width: 25rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* drop down mulai */
+/* Dropdown Button */
+.dropbtn {
+  background-color: var(--primary-button);
+  color: var(--text);
+  padding: 16px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.dropdown-content {
+  border-radius: 10px;
+  background-color: var(--primary-button);
+}
+/* Dropdown button on hover & focus */
+.dropbtn:hover,
+.dropbtn:focus {
+  background-color: var(--primary-button);
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (menghilang secara Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--background);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+/* Links di dalam dropdown */
+.dropdown-content a {
+  color: var(--text);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {
+  background-color: var(--primary-button);
+  border-radius: 10px;
+}
+/* menampilkan dropdown menu (pake JS untuk apabila dropdwon di clik) */
+.show {
+  display: block;
+}
+/* drop down selesai */
+/* forum komunitas start */
+.container-forum-komunitas {
+  background-color: var(--accent);
+  height: 50rem;
+  text-align: center;
+}
+.hero-komunitas-dekstop img {
+  padding-top: 5rem;
+  width: 25rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.komunitas-1 {
+  background-color: var(--primary-button);
+  width: 25rem;
+  border-radius: 10px;
+}
+.sosial-card {
+  text-align: center;
+}
+
+/* edukasi dekstop judul start*/
+.hero-edukasi-dekstop-logo {
+  background-color: var(--accent);
+  padding-top: 5rem;
+  color: var(--background);
+  text-align: center;
+}
+.hero-edukasi-dekstop-logo img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 16rem;
+}
+.hero-content-edukasi span {
+  color: var(--primary-button);
+}
+/* heronya dekstop judul end*/
+/* tawaran dan promosi start */
+.container-Tawaran-Promosi {
+  background-color: var(--accent);
+  height: 50rem;
+  text-align: center;
+}
+.hero-Tawaran-Promosi-dekstop-logo img {
+  padding-top: 5rem;
+  width: 25rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* tawaran dan promosi end */
+/* tracking sampah start */
+.background-tracking-sampah {
+  background-color: var(--accent);
+  width: 100%;
+  height: 80rem;
+}
+.container-tracking-sampah {
+  background-color: var(--primary-button);
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 5rem;
+  border-radius: 20px;
+}
+.judul-tracking-sampah h1 {
+  text-align: center;
+  padding-bottom: 2.5rem;
+}
+.content-tracking-sampah {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 10px;
+}
+.content-tracking-sampah {
+  margin-left: 60px;
+}
+.maps {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  height: 400px;
+}
+/* tracking sampah end */
+/* isi content edukasi dekstop start */
+/* hapus edukasi hp di destop */
+.hero-edukasi-dekstop-logo img {
+  margin-top: 5rem;
+}
+.hero-content-edukasi-isi-hp {
+  display: none;
+}
+/* hapus edukasi hp di destop */
+/* logo di kanan */
+.hero-content-edukasi-isi-kanan-dekstop {
+  display: flex;
+  flex: wrap;
+  background-color: var(--accent);
+  padding-top: 50px;
+}
+.hero-content-edukasi-isi-kanan-dekstop p {
+  text-align: left;
+  margin-left: 10rem;
+  margin-right: 15rem;
+  padding-top: 8rem;
+}
+.header-content-kanan-dekstop {
+  margin-right: 15rem;
+}
+.header-content-kanan-dekstop img {
+  width: 20rem;
+}
+.hero-content-edukasi-isi-dekstop h3 {
+  color: var(--primary-button);
+}
+/* logo di kanan */
+/* logo di kiri */
+.hero-content-edukasi-isi-kiri-dekstop {
+  display: flex;
+  flex: wrap;
+  background-color: var(--accent);
+  padding-top: 50px;
+}
+.hero-content-edukasi-isi-kiri-dekstop p {
+  text-align: left;
+  margin-left: 10rem;
+  margin-right: 15rem;
+  padding-top: 8rem;
+}
+.header-content-kiri-dekstop {
+  margin-left: 10rem;
+  margin-right: 15rem;
+}
+.header-content-kiri-dekstop img {
+  width: 20rem;
+}
+.hero-content-edukasi-isi-dekstop h3 {
+  color: var(--primary-button);
+}
+/* logo di kiri*/
+/* isi content edukasi dekstop end */
+/* heronya dekstop end*/
+
+/* hero hp start*/
+.hero-edukasi-hp-logo {
+  color: var(--background);
+  background-color: var(--accent);
+  padding: 2.5rem;
+  text-align: center;
+}
+.hero-edukasi-hp-logo img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 8rem;
+}
+/* heronya hp end*/
+/* hero edukasi-pengolahan end */
+/* styling untuk akun di bawah kiri start */
+.akun img {
+  width: 3.5rem;
+  position: fixed;
+  top: 100;
+  bottom: 0;
+}
+/* styling untuk akun di bawah kiri end */
+/* footer start */
+footer {
+  background-color: var(--primary-button);
+  text-align: center;
+  padding: 1rem 0 3rem;
+  margin-top: auto;
+}
+.socials {
+  padding: 1rem 0;
+}
+.socials a {
+  color: #fff;
+  margin: 1rem;
+}
+.socials a:hover,
+.links a:hover {
+  color: var(--accent);
+}
+.links {
+  margin-bottom: 1.4rem;
+}
+.links a {
+  color: #fff;
+  padding: 0.7 1rem;
+}
+.credit {
+  font-size: 1rem;
+}
+.credit a {
+  color: var(--accent);
+  font-weight: 700;
+}
+/* footer end */
+/* login start */
+.container-login {
+  background-color: var(--primary-button);
+  height: 50rem;
+}
+.header-login {
+  background-color: var(--accent);
+  border: var(--text) solid 10px;
+  border-radius: 15rem;
+  text-align: center;
+  margin-left: 15rem;
+  margin-right: 15rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  font-weight: 700;
+  font-size: x-large;
+  text-decoration: none;
+}
+.form-login ul li {
+  margin-top: 16px;
+  list-style: none;
+}
+.form-login ul li button {
+  margin-left: 14rem;
+  width: 10rem;
+}
+.logo-close-login {
+  position: absolute;
+  right: 30rem;
+  top: 3rem;
+}
+
+/* login end */
+/* media queris*/
+/* laptop*/
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+/* tablet*/
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+  /* menampilkan hamburger menu pada tablet dan hp mulai untuk navbar*/
+  #hamburger-menu {
+    display: inline-block;
+  }
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background: var(--background);
+    width: 25rem;
+    height: 100vh;
+    transition: 0.4s;
+  }
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+  .navbar .navbar-nav a {
+    display: block;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.6);
+    transition: 0.4s;
+  }
+  /* menampilkan hamburger menu pada tablet dan hp selesai */
+  /* menghapus styling css edukasi dekstop di hp */
+  .hero-content-edukasi-isi-kanan-dekstop {
+    display: none;
+  }
+  .hero-content-edukasi-isi-kiri-dekstop {
+    display: none;
+  }
+  /* membuat styling css edukasi pada hp mulai */
+  .container-edukasi-hp {
+    background-color: var(--accent);
+  }
+  .hero-content-edukasi-isi-hp {
+    display: inline;
+    background-color: var(--accent);
+  }
+  .hero-content-edukasi-isi-hp p {
+    display: block;
+  }
+  .header-content-edukasi-hp img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20rem;
+  }
+  .header-content-edukasi-hp h3 {
+    text-align: center;
+  }
+  .hero-content-edukasi-isi-hp p {
+    padding-top: 25px;
+    text-align: center;
+  }
+
+  /* login di hp */
+  .container-login {
+    background-color: var(--primary-button);
+    height: 60rem;
+  }
+  .header-login {
+    background-color: var(--accent);
+    border: var(--text) solid 10px;
+    border-radius: 15rem;
+    text-align: center;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    font-weight: 700;
+    font-size: x-large;
+    text-decoration: none;
+  }
+  .form-login ul li {
+    margin-top: 16px;
+    list-style: none;
+  }
+  .form-login ul li button {
+    margin-left: 14rem;
+    width: 10rem;
+  }
+  .logo-close-login {
+    position: absolute;
+    right: 12rem;
+    top: 7rem;
+  }
+  /* tracking sampah start */
+  .background-tracking-sampah {
+    background-color: var(--accent);
+    width: 100%;
+    height: 80rem;
+  }
+  .container-tracking-sampah {
+    background-color: var(--primary-button);
+    max-width: 425px;
+    margin: 0 auto;
+    padding-top: 5rem;
+    border-radius: 20px;
+  }
+  .judul-tracking-sampah h1 {
+    text-align: center;
+    padding-bottom: 2.5rem;
+  }
+  .content-tracking-sampah {
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+  }
+  .content-tracking-sampah h2 p {
+    margin-left: 100px;
+  }
+  .maps {
+    width: 90%;
+    height: 400px;
+  }
+  /* tracking sampah end */
+}
+/* membuat styling css edukasi pada hp selesai */
+/* hp*/
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}
