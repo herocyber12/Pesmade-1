@@ -27,8 +27,12 @@ html {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 3%;
-  background-image: linear-gradient(180deg, #ede9f6 78%, #8ed2a0 100%);
   position: fixed;
+  background-image: linear-gradient(
+    180deg,
+    #ede9f6 86%,
+    rgba(237, 233, 246, 0) 100%
+  );
   top: 0;
   left: 0;
   right: 0;
@@ -147,24 +151,57 @@ html {
   }
 }
 /* carousel end */
-.container-fitur img {
+.container-fitur-hp {
+  display: none;
+}
+.fitur-atas-dekstop {
+  display: flex;
+  justify-content: center;
+  gap: 8rem;
+}
+.fitur-bawah-dekstop {
+  display: flex;
+  justify-content: center;
+  gap: 7rem;
+  margin-top: 5rem;
+  padding-bottom: 10rem;
+}
+.home-Edukasi-pengolahan {
+  margin-left: 5rem;
+}
+.home-Pelaporan-analisa {
+  margin-right: 2rem;
+}
+.container-fitur-dekstop {
+  background-color: var(--accent);
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  color: var(--primary-button);
+}
+.container-fitur-dekstop img {
   background-color: var(--primary-button);
   width: 5rem;
   border-radius: 10px;
   cursor: pointer;
 }
-.container-fitur {
-  background-color: var(--accent);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  text-align: center;
-  gap: 8rem;
-  cursor: pointer;
-  color: var(--primary-button);
-}
 .home-Pemantauan-sampah a {
-  text-decoration: none;
+  color: var(--text);
+}
+.home-forum-komunitas a {
+  color: var(--text);
+}
+.home-Tawaran-promosi a {
+  color: var(--text);
+}
+.home-Tracking-sampah a {
+  color: var(--text);
+}
+.home-Edukasi-pengolahan a {
+  color: var(--text);
+}
+.home-Pelaporan-analisa a {
+  color: var(--text);
 }
 /* home page end */
 /* Pengolahan sampah dekstop start */
@@ -398,7 +435,7 @@ html {
 }
 /* styling untuk akun di bawah kiri end */
 /* footer start */
-footer {
+.container-footer {
   background-color: var(--primary-button);
   text-align: center;
   padding: 1rem 0 3rem;
@@ -476,6 +513,60 @@ footer {
     font-size: 62.5%;
   }
   /* menampilkan hamburger menu pada tablet dan hp mulai untuk navbar*/
+  .navbar {
+    height: 7.5rem;
+  }
+  .container-fitur-dekstop {
+    display: none;
+  }
+  .container-fitur-hp {
+    display: inline-block;
+    width: 100%;
+  }
+  .fitur-atas-hp {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 5rem;
+  }
+  .fitur-bawah-hp {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-left: -2rem;
+  }
+  .container-fitur-hp {
+    background-color: var(--accent);
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    color: var(--primary-button);
+  }
+  .container-fitur-hp img {
+    background-color: var(--primary-button);
+    width: 5rem;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .home-Pemantauan-sampah a {
+    color: var(--text);
+  }
+  .home-forum-komunitas a {
+    color: var(--text);
+  }
+  .home-Tawaran-promosi a {
+    color: var(--text);
+  }
+  .home-Tracking-sampah a {
+    color: var(--text);
+  }
+  .home-Edukasi-pengolahan a {
+    color: var(--text);
+  }
+  .home-Pelaporan-analisa a {
+    color: var(--text);
+  }
+
   #hamburger-menu {
     display: inline-block;
   }
@@ -598,6 +689,37 @@ footer {
   .maps {
     width: 90%;
     height: 400px;
+  }
+  .container-footer {
+    background-color: var(--primary-button);
+    text-align: center;
+    padding: 1rem 0 3rem;
+    margin-top: auto;
+  }
+  .socials {
+    padding: 1rem 0;
+  }
+  .socials a {
+    color: #fff;
+    margin: 1rem;
+  }
+  .socials a:hover,
+  .links a:hover {
+    color: var(--accent);
+  }
+  .links {
+    margin-bottom: 1.4rem;
+  }
+  .links a {
+    color: #fff;
+    padding: 0.7 1rem;
+  }
+  .credit {
+    font-size: 1rem;
+  }
+  .credit a {
+    color: var(--accent);
+    font-weight: 700;
   }
   /* tracking sampah end */
 }
