@@ -51,6 +51,30 @@
   display: none;
 }
 
+ /* CSS untuk mengatur tampilan dropdown */
+ .dropdown-toggle::after {
+  display: none; /* Menghapus tanda panah bawaan */
+}
+
+.dropdown-menu {
+  background-color: var(--primary-button); /* Warna latar belakang menu dropdown */
+  border-radius: 10px;
+}
+
+.dropdown-item {
+  color: var(--text); /* Warna teks item dropdown */
+}
+
+.dropdown-item:hover {
+  background-color: var(--background); /* Warna latar belakang saat item dihover */
+  border-radius: 10px;
+}
+
+/* Gunakan Font Awesome untuk ikon */
+.dropdown-item i {
+  margin-right: 10px;
+}
+
 /* Show the navbar-toggler on smaller screens */
 @media (max-width: 768px) {
   .navbar-toggler {
