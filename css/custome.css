@@ -1,0 +1,59 @@
+/* Stylize the navbar */
+.navbar {
+  background-image: linear-gradient(
+    180deg,
+    #ede9f6 86%,
+    rgba(237, 233, 246, 0) 100%
+  );
+  padding: 1rem 3%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  height: 5rem;
+}
+
+.navbar-logo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0c0916;
+}
+
+.navbar-logo span {
+  color: #8ed2a0;
+}
+
+.navbar-nav a {
+  color: #0c0916;
+  font-size: 1.2rem;
+  margin: 0 0.5rem;
+}
+
+.navbar-nav a:hover {
+  color: #8ed2a0;
+}
+
+.navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #8ed2a0;
+  transform: scaleX(0);
+  transition: 0.4s linear;
+}
+
+.navbar-nav a:hover::after {
+  transform: scaleX(0.6);
+}
+
+.navbar-toggler {
+  display: none;
+}
+
+/* Show the navbar-toggler on smaller screens */
+@media (max-width: 768px) {
+  .navbar-toggler {
+    display: block;
+  }
+}
