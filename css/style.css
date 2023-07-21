@@ -15,9 +15,9 @@
   text-decoration: none;
   font-family: Poppins, sans-serif;
 }
-body {
+/* body {
   height: 10000px;
-}
+} */
 html {
   scroll-behavior: smooth;
 }
@@ -247,7 +247,7 @@ html {
   display: none;
   position: absolute;
   background-color: var(--background);
-  min-width: 160px;
+  max-width: inherit;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   margin-left: 10px;

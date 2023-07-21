@@ -1,16 +1,27 @@
-//toggle class active
-const NavbarNav = document.querySelector(".navbar-nav");
-// ketika hamburger menu di click
-document.querySelector("#hamburger-menu").onclick = () => {
-  NavbarNav.classList.toggle("active");
-};
-//tombol close untuk hamburgermenu(click di manapun untuk close)
-const hm = document.querySelector("#hamburger-menu");
-document.addEventListener("click", function (e) {
-  if (!hm.contains(e.target) && !NavbarNav.contains(e.target)) {
-    NavbarNav.classList.remove("active");
-  }
-});
+
+  const NavbarNav = document.querySelector(".navbar-nav");
+  const hm = document.querySelector("#hamburger-menu");
+
+  // Ketika tombol hamburger menu di klik
+  hm.onclick = (e) => {
+    e.preventDefault();
+    NavbarNav.classList.toggle("active");
+  };
+
+  // Tombol close untuk hamburger menu (klik di manapun untuk menutup)
+  document.addEventListener("click", function (e) {
+    if (!hm.contains(e.target) && !NavbarNav.contains(e.target)) {
+      NavbarNav.classList.remove("active");
+    }
+  });
+
+  // Tombol close untuk hamburger menu (klik di manapun untuk menutup)
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      NavbarNav.classList.remove("active");
+    }
+  });
+
 // carousel start
 const carousel = document.querySelector(".carousel"),
   firstImg = carousel.querySelectorAll("img")[0],
@@ -93,6 +104,8 @@ function myFunction(e) {
     document.getElementById("myDropdown").classList.toggle("show");
   } else if (e == 2){
     document.getElementById("myDropdown2").classList.toggle("show");
+  } else if (e==3){
+    document.getElementById("myDropdown3").classList.toggle("show");
   }
 }
 // Close the dropdown menu if the user clicks outside of it
